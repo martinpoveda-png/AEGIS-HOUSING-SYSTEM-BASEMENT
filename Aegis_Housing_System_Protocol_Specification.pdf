@@ -1,0 +1,102 @@
+EXECUTIVE SUMMARY
+The AEGIS HOUSING BASEMENT SYSTEM is a climate-resilient, blockchain-integrated housing protocol that places the basement as the true heart of the home.
+This protocol fully open-sources the basement engineering (Passive Geothermal Energy Bank, thermal mass, geothermal loops, flood-resistant drainage, and all mathematical models) under MIT / Apache 2.0, while keeping upper-house architectural IP proprietary but cryptographically auditable.
+Core Innovation: The basement is simultaneously the structural foundation, passive geothermal energy plant, energy storage system, and bright usable living space — delivering 60–70% energy savings with zero utility bills and zero maintenance.
+Project Wallet: CzdBHjP7CkqRaYrxwoCxDpFhXU2B6akZ5rfFKQqo1NCj (Solana Mainnet)
+
+1. ARCHITECTURAL DESIGN
+Footprint: Trapezoidal — 20 ft front façade widening to 40 ft at rear × 33.3 ft depth
+Height: 4 stories
+Signature Feature: Inverted U-Shell Roof — Strong structural U-shaped corrugated marine-grade stainless steel shell that wraps over the top and down the sides (primary load-bearing and protective element)
+Exterior:
+
+Corrugated marine-grade stainless steel U-shell with subtle weathering
+Triple-glazed low-E windows with thin black frames
+Natural stone veneer on lower levels
+Integrated tubular daylighting domes
+
+Landscaping: Positive 2% grading with bioswale systems
+
+2. PASSIVE GEOTHERMAL ENERGY BANK (100% OPEN SOURCE)
+Depth: 3 meters (10 ft)
+Earth Temperature: Stable 50–55 °F
+Thermal Mass: 80–95 cubic yards of high-mass reinforced concrete
+Geothermal Loops: 1,400 linear feet of 1" SDR-11 HDPE embedded during pour
+Passive Capacity: 55,000 – 100,000 BTU/hr
+Circulation Power: <100 W in shoulder seasons
+Construction: Single mini-excavator (≈40 hours)
+Fully Open Source:
+
+All geothermal engineering
+Fourier heat transfer models
+Load calculations and tolerances
+Construction sequences
+
+
+3. OPEN-SOURCE IP vs PROPRIETARY IP (Updated Emphasis)
+100% Open Source (MIT / Apache 2.0) — Basement Only:
+
+Complete Passive Geothermal Energy Bank patent specification
+All Python PoW validators (v3.0)
+Structural, electrical, thermal, and construction mathematics
+US permitting & contracting roadmaps (Virginia USBC, 12VAC5-630, AIA, Title 43)
+Hybrid exploded axonometric drawings and color-coded technical documentation
+
+Proprietary (Hashed Only):
+
+Upper-house architectural IP (facades, interiors, customizations)
+Capital escrow logic and titlingDAO sensitive configurations
+Full legal instruments and investor materials
+
+
+4. SOLANA BLOCKCHAIN ARCHITECTURE
+80/20 Legal Ledger Model:
+
+80% routine PoW → Solana Memo Program (~$0.0001/entry)
+20% macro milestones → Anchor smart contract + multi-sig + oracle
+
+PoW v3.0 Features:
+
+Real evidence parsing from measurements.json
+Deterministic memory-safe hashing
+Cryptographic payload signing (ed25519)
+Live Solana RPC integration for on-chain verification
+Staking with 365-day lock + slashing treasury
+
+Rewards:
+
+First 10 validators per phase: 150+ HOOP + $120–300 USD equivalent
+Weekly contests on r/AegisHOOP and X (#AegisPoW)
+1.5× multiplier for staked USDC
+
+
+5. LEGAL & GOVERNANCE STRUCTURE
+
+Wyoming Series LLC (titlingDAO)
+70% supermajority governance
+4-of-7 Force Majeure bypass
+E&O-backed Professional Engineer signatures
+
+
+6. KEY BENEFITS
+
+60–70% energy reduction
+Zero utility bills (passive geothermal mode)
+Zero maintenance (U-shell + geothermal design)
+Flood resistant (multi-layer drainage)
+Single mini-excavator construction
+Full code compliance (2021 Virginia USBC, IECC, IRC, NEC 2023)
+
+
+7. CONTACT INFORMATION
+Author: Martin Poveda Amarfil
+Company: Climate Risk Analytics, LLC
+Phone: +1 (202) 438-1338
+Email: martin.poveda@climateriskanalytics.lat
+Website: climateriskanalytics.lat
+Project Wallet (Solana Mainnet):
+CzdBHjP7CkqRaYrxwoCxDpFhXU2B6akZ5rfFKQqo1NCj
+
+Document Control: This is the authoritative version of the Aegis Housing System Protocol Specification (v3.0). All future updates will reference this baseline.
+License: Basement engineering, mathematical models, validators, and technical documentation — MIT / Apache 2.0 (free for community use).
+Upper architectural IP — proprietary but auditable via hash.
