@@ -1,0 +1,108 @@
+AEGIS HOUSING BASEMENT SYSTEM — COMPLETE FREE BLUEPRINTS + APPLIED MATHEMATICS (TEXT ONLY)
+
+This file contains every equation, tolerance, dimension, and US code reference needed to build the Passive Geothermal Energy Bank Basement as a standalone module. No CAD files required. All math is verifiable locally.
+
+=== 1. SITE & EXCAVATION MATH ===
+Footprint: Trapezoidal 20 ft front → 40 ft rear × 33.3 ft depth
+Excavation depth: 3.0 m (10 ft) finished interior
+Volume: ((20 + 40) / 2) × 33.3 × 10 = 350 cubic yards exact
+Grading: 2% positive slope away from structure (Manning equation for French drain flow)
+Time: 40 operating hours single mini-excavator
+Tolerance: ±10% volume, ±5% slope
+Code: Virginia USBC 2021 Ch. 18 (Soils & Foundations), local erosion control permit
+
+=== 2. THERMAL ENERGY BANK MATH (FOURIER LAW) ===
+Earth temperature at 3 m: 50–55 °F (12.78 °C) = local annual average
+Loop length: 1,200–1,600 linear ft (nominal 1,400 ft = 426.72 m)
+Pipe: 1" SDR-11 HDPE (r = 0.0127 m)
+Concrete k = 1.4 W/m·K
+HDPE k = 0.42 W/m·K
+Fluid: 20–30% propylene-glycol/water
+Steady-state heat conduction:
+  d²T/dx² = 0
+  Boundary: T(0) = 21.11 °C (70 °F), T(L) = 12.78 °C (55 °F)
+  Solution via solve_bvp (SciPy/SymPy)
+Heat flux q = -k_concrete × (dT/dx) at wall
+Passive capacity = |q| × L × 3.41214 BTU/hr
+Target: 55,000–100,000 BTU/hr
+Shoulder season circulation: <100 W variable-speed circulator
+PoW validation: local computed flux vs on-chain hash ±1% tolerance
+
+=== 3. STRUCTURAL MATHEMATICS (IRC 2021 + ASCE 7-16) ===
+Live loads:
+  Floor: 40 psf
+  Roof (corrugated marine SS U-shell): 40 psf + snow
+Deflection limit: L/360 for floors
+Simple beam deflection:
+  δ = 5wL⁴/384EI (w = load per inch, L in inches, E = 29e6 psi steel equiv, I = section modulus)
+Shear & moment:
+  V_max = wL/2
+  M_max = wL²/8
+Rebar spacing: 5.5–7.0 in (#4 bars @ 6 in target)
+Seismic (ASCE 7):
+  Cs = Sds / (R/Ie)   (R=5 bearing wall system)
+  Vbase = Cs × W (W ≈ 150 psf × area × 4 stories)
+Wind:
+  q = 0.00256 × V² × 0.85   (V = 115 mph Virginia zone)
+  F = q × area
+PoW check: input measured δ, spacing, soil bearing → pass if within 5% of calc + IRC flag
+
+=== 4. ELECTRICAL MATHEMATICS (NEC 2023 + Electrician Grade) ===
+General lighting: 3 VA/ft² × 2,700 sqft = 8,100 VA
+Small appliance: 1,500 VA × 2 = 3,000 VA
+Laundry: 1,500 VA
+HVAC/GSHP: 12,000 VA
+EV Level 2: 7,200 VA (30 A 240 V)
+Other (HRV, circulators, LED, controls): 5,000 VA
+Total VA ≈ 36,800
+Demand factor (NEC 220.42): 100% first 10 kVA + 35% remainder
+Service amps = (demand VA / 240) × 1.25 (continuous)
+Target: 200 A main panel, 4 subpanels (100/100/60/60 A)
+Grounding resistance: ≤5 Ω best practice (NEC 250.56 target <25 Ω)
+Mini-grid community (45 units):
+  PV: 150–200 kW total
+  Battery: 600 kWh central lithium
+  Inverter: 150 kW hybrid
+  EMS: predictive load shifting
+Per-unit:
+  HRV: ≤200 W, >80% efficient
+  Circulator: ≤100 W variable
+  LED: 6 zones circadian
+  EV ready: Level 2 conduit
+PoW: measured amps/grounding within 10% of calc + NEC 2023 flag (AFCI 210.12, GFCI 210.8, Art 750 energy management)
+
+=== 5. CONSTRUCTION SEQUENCE + TOLERANCES (10 PHASES) ===
+Phase 1: Site prep/excavation — 3 days, 350 CY, 2% grade, erosion control
+Phase 2: Basement thermal core — 7 days, rebar 6 in, 1,400 ft HDPE, waterproof, R-15, 4,000 psi pour
+Phase 3: U-shell crane — 2 days, 1-piece inverted SS, lift plan, anchor bolts
+Phase 4: Upper modules + shear walls — 3 days, galvanized portal
+Phase 5: Facade, windows — 4 days, triple-glaze low-E, stone veneer
+Phase 6: Daylighting + blower door — 2 days, <0.6 ACH50
+Phase 7: Rough MEP — 5 days, electrical/plumbing/HRV/manifolds
+Phase 8: Interior finishes — 7 days, polished concrete, flooring, kitchen, LED
+Phase 9: Mini-Grid Connect + Landscaping — 3 days, Dominion interconnect, bioswale
+Phase 10: Final QA/CO/training — 2 days, digital twin, AAA Dutch cert, warranty, HOA docs
+
+Tolerances (all phases): ±10% duration, ±5% dimension, geo-tagged photos min 8 per phase
+Inspections required per phase (Virginia USBC Ch. 11)
+
+=== 6. US PERMITTING & CONTRACTING (COMPLETE CHECKLIST) ===
+Zoning: R-12/R-16 or C-H/T-5C by-right (VA Code §15.2-2280)
+Building permit: County building dept (USBC 2021/2024), fee ~$2-5k/unit
+Trade permits: Electrical (NEC 2023), Plumbing, Mechanical (12VAC5-630-271 VDH geothermal)
+Inspections: Footing, foundation, framing, insulation, rough MEP, final
+Certificate of Occupancy (CO): Final inspection + fire marshal + utility sign-off
+Contracts: AIA A101/A201 or custom, G702 progress payments, 5–10% retainage
+Liens: Virginia Title 43 — mechanic’s lien waivers required for each payment
+Post-CO: 1-year builder warranty + 2–10 year structural, HOA formation, utility transfer (Dominion Energy, water/sewer)
+
+=== 7. HOW TO EARN ON SOLANA (MATHEMATICAL PoW) ===
+Run validate_all.py with your local evidence
+Submit math result hash + score to Solana Anchor
+First 10 per gate: 150 HOOP + cash equivalent
+Top weekly on Reddit r/AegisHOOP or X #AegisPoW: extra 2× + NFT
+Stake 50–500 USDC (365 days) → 1.5× reward multiplier + slash protection
+
+All equations above are the complete, buildable blueprints. No external files needed. This basement is free IP. Upper house available for purchase later.
+
+Document Control: Authoritative basement-only free IP version — April 27, 2026.
